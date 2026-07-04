@@ -1,0 +1,150 @@
+===========================================================================================================================
+                                        CONVERSOR UNIVERSAL
+                                     Planejamento do Software
+===========================================================================================================================
+
+    Objetivo
+
+        Desenvolver um sistema capaz de realizar diferentes tipos de conversões através de um menu interativo no terminal.
+        O programa deverá permitir ao usuário escolher uma categoria de conversão, informar um valor e visualizar o resultado imediatamente.
+
+
+    Estrutura Geral
+
+                CONVERSOR UNIVERSAL
+
+                        │
+        ┌───────────────┼────────────────┐
+        │               │                │
+        ▼               ▼                ▼
+   Temperatura      Distância        Moedas
+        │               │                │
+        ▼               ▼                ▼
+ Celsius ↔ Fahrenheit   Km ↔ Milhas     Real ↔ Dólar
+
+
+    Fluxo do Programa
+
+
+    Início
+
+           ↓
+
+        Menu Principal
+
+           ↓
+
+        Escolher categoria
+
+           ↓
+
+        Temperatura
+        Distância
+        Moedas
+        Sair
+
+           ↓
+
+        Selecionar conversão
+
+           ↓
+
+        Informar valor
+
+           ↓
+
+        Executar conversão
+
+           ↓
+
+        Exibir resultado
+
+           ↓
+
+        Voltar ao Menu Principal
+
+
+    
+    Menu Principal
+
+        1 - Temperatura
+
+        2 - Distância
+
+        3 - Moedas
+
+        4 - Sair
+
+    
+
+    Menu Temperatura
+
+        1 - Celsius para Fahrenheit
+
+        2 - Fahrenheit para Celsius
+
+        3 - Voltar
+
+    
+
+    Menu Distância
+
+        1 - Quilômetros para Milhas
+
+        2 - Milhas para Quilômetros
+
+        3 - Voltar
+
+    
+
+    Menu Moedas
+
+        1 - Real para Dólar
+
+        2 - Dólar para Real
+
+        3 - Voltar
+
+
+    Funções Previstas
+
+
+    Menus
+
+        menuPrincipal()
+
+        menuTemperatura()
+
+        menuDistancia()
+
+        menuMoedas()
+
+    Conversões
+
+        celsiusParaFahrenheit()
+
+        fahrenheitParaCelsius()
+
+        kmParaMilhas()
+
+        milhasParaKm()
+
+        realParaDolar()
+
+        dolarParaReal()
+
+
+    Conceitos de Programação
+
+        - Funções
+        - Estruturas condicionais
+        - Switch Case
+        - Loops
+        - Organização modular
+        - Boas práticas de programação
+        - Separação de responsabilidades
+
+
+    Objetivo Final
+
+        Criar um conversor reutilizável, organizado, de fácil manutenção e preparado para receber novas conversões futuramente.
