@@ -59,4 +59,33 @@ float dolarParaReal(float dolar);
 // MAIN
 int main () {
 
+    int opcao;
+
+    menuPrincipal();
+    scanf("%d", &opcao);
+
+    switch (opcao){
+    case 1 :
+        menuDistancia();
+        break;
+    
+    case 2 :
+        menuTemperatura();
+        break;
+    
+    case 3 :
+        menuMoedas();
+        break;
+
+    case 0 :
+        printf("Saindo...");
+        break;
+    
+    default:
+    printf("Opcao invalida");
+    break;
+}
+
+return 0;
+
 }
