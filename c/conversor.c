@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define DOLAR 5.11
 
 // MENUS DO SISTEMA 
 void menuPrincipal (){
@@ -47,14 +48,35 @@ void menuMoedas (){
 }
 
 // CONVERSOES
-float celsiusParaFahrenheit(float c);
-float fahrenheitParaCelsius(float f);
+float celsiusParaFahrenheit(float c){
 
-float kmParaMilhas(float km);
-float milhasParaKm(float milhas);
+    return (c * 9/5) + 32;
+}
 
-float realParaDolar(float real);
-float dolarParaReal(float dolar);
+float fahrenheitParaCelsius(float f){
+
+    return (f - 32) * 5/9;
+}
+
+float kmParaMilhas(float km){
+
+    return km * 0.621371;
+}
+
+float milhasParaKm(float milhas){
+
+    return milhas / 0.621371;
+}
+
+float realParaDolar(float real){
+
+    return real / DOLAR;
+}
+
+float dolarParaReal(float dolar){
+
+    return dolar * DOLAR;
+}
 
 // MAIN
 int main () {
