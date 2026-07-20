@@ -82,22 +82,166 @@ float dolarParaReal(float dolar){
 int main () {
 
     int opcao;
+    int opcaoDistancia;
+    int opcaoTemperatura;
+    int opcaoMoeda;
 
     menuPrincipal();
     scanf("%d", &opcao);
 
     switch (opcao){
-    case 1 :
-        menuDistancia();
+    case 1 : {
+        
+            menuDistancia();
+
+            printf("Escolha: ");
+            scanf("%d", &opcaoDistancia);
+        
+        switch (opcaoDistancia){
+        case 1: {
+
+            float km;
+
+            printf("Digite a quantidade em Km: ");
+            scanf("%f", &km);
+
+            printf("\nResultado:\n");
+            float resultado = kmParaMilhas(km);
+
+            printf("%.2f Km = %.2f Milhas\n", km, resultado);
+
+            break;
+        }
+            
+            
+        case 2: {
+
+            float milhas;
+
+            printf("Digite a quantidade em Milhas: ");
+            scanf("%f", &milhas);
+
+            printf("\nResultado:\n");
+            float resultado = milhasParaKm(milhas);
+
+            printf("%.2f Milhas = %.2f Km\n", milhas, resultado);
+
+            break;
+        }
+            
+            
+        case 3:
+            break;
+        
+        default:
+            printf("Opcao invalida");
+            break;
+        }
+
         break;
-    
-    case 2 :
+    }
+
+    case 2 : {
+
         menuTemperatura();
+        printf("Escolha: ");
+        scanf("%d", &opcaoTemperatura);
+        
+    switch (opcaoTemperatura){
+    case 1: {
+        float celsius;
+
+        printf("Digite a temperatura em Celsius: ");
+        scanf("%f", &celsius);
+
+        printf("\nResultado:\n");
+        float resultado = celsiusParaFahrenheit(celsius);
+
+        printf("%.2f Celsius = %.2f Fahrenheit\n", celsius, resultado);
+
+        break;
+    }
+        
+    case 2: {
+        
+        float fahrenheit;
+
+        printf("Digite a temperatura em Fahrenheit: ");
+        scanf("%f", &fahrenheit);
+
+        printf("\nResultado:\n");
+        float resultado = fahrenheitParaCelsius(fahrenheit);
+
+        printf("%.2f Fahrenheit = %.2f Celsius\n", fahrenheit, resultado);
+
+        break;
+
+    }
+    
+    case 3:
+            break;
+        
+        default:
+            printf("Opcao invalida");
+            break;
+        }
+
         break;
     
-    case 3 :
+    }
+        
+    
+    case 3 : {
+
         menuMoedas();
+        printf("Escolha: ");
+        scanf("%d", &opcaoMoeda);
+
+    switch (opcaoMoeda){
+    case 1: {
+
+        float real;
+
+        printf("Digite a quantidade em Real: ");
+        scanf("%f", &real);
+
+        printf("\nResultado:\n");
+        float resultado = realParaDolar(real);
+
+        printf("%.2f Real = %.2f Dolar\n", real, resultado);
+
         break;
+
+    }
+
+    case 2: {
+
+        float dolar;
+
+        printf("Digite a quantidade em Dolar: ");
+        scanf("%f", &dolar);
+
+        printf("\nResultado:\n");
+        float resultado = dolarParaReal(dolar);
+
+        printf("%.2f Dolar = %.2f Real\n", dolar, resultado);
+
+        break;
+
+    }
+        
+    case 3:
+            break;
+        
+        default:
+            printf("Opcao invalida");
+            break;
+        }
+
+        break;
+
+    }
+        
 
     case 0 :
         printf("Saindo...");
