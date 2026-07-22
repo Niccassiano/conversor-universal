@@ -1,5 +1,6 @@
 #include <stdio.h>
 #define DOLAR 5.11
+#define KM_MILHAS 0.621371
 
 // MENUS DO SISTEMA 
 void menuPrincipal (){
@@ -21,7 +22,7 @@ void menuDistancia (){
     printf("\n===== DISTANCIA =====\n");
     printf("--- Km <-> Milhas ---\n");
 
-    printf("1 - Km -> Milhas\n ");
+    printf("1 - Km -> Milhas\n");
     printf("2 - Milhas -> Km\n");
     printf("3 - Voltar ao Menu Principal\n");
 
@@ -60,12 +61,12 @@ float fahrenheitParaCelsius(float f){
 
 float kmParaMilhas(float km){
 
-    return km * 0.621371;
+    return km * KM_MILHAS;
 }
 
 float milhasParaKm(float milhas){
 
-    return milhas / 0.621371;
+    return milhas / KM_MILHAS;
 }
 
 float realParaDolar(float real){
@@ -78,24 +79,16 @@ float dolarParaReal(float dolar){
     return dolar * DOLAR;
 }
 
-// MAIN
-int main () {
+// EXECUÇÃO DOS MENUS
+void executarDistancia(){
 
-    int opcao;
     int opcaoDistancia;
-    int opcaoTemperatura;
-    int opcaoMoeda;
 
     do
-    {
-    menuPrincipal();
-    scanf("%d", &opcao);
-
-    switch (opcao){
-    case 1 : {
-
-        do
         {
+
+            printf("\n");
+
                 menuDistancia();
 
             printf("Escolha: ");
@@ -144,14 +137,16 @@ int main () {
         }
 
         } while (opcaoDistancia != 3);
-        
-        break;
-    }
 
-    case 2 : {
+}
+void executarTemperatura(){
+
+    int opcaoTemperatura;
 
         do
         {
+            printf("\n");
+
             menuTemperatura();
         printf("Escolha: ");
         scanf("%d", &opcaoTemperatura);
@@ -198,16 +193,18 @@ int main () {
 
         } while (opcaoTemperatura != 3);
         
-        break;
-    
-    }
-        
-    
-    case 3 : {
+       
+
+}
+void executarMoedas(){
+
+    int opcaoMoeda;
 
         do
         {
          
+            printf("\n");
+
                 menuMoedas();
         printf("Escolha: ");
         scanf("%d", &opcaoMoeda);
@@ -256,11 +253,34 @@ int main () {
 
         } while (opcaoMoeda != 3);
 
-        break;
+}
 
+
+
+// MAIN
+int main () {
+
+    int opcao;
+
+    do
+    {
+    menuPrincipal();
+    scanf("%d", &opcao);
+
+    switch (opcao){
+    case 1 : {
+        executarDistancia();
+        break;
+    }
+    case 2 : {
+        executarTemperatura();
+        break;
+    }
+    case 3 : {
+        executarMoedas();
+        break;
     }
         
-
     case 0 :
         printf("\nEncerrando o programa...\n");
         break;
