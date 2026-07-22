@@ -18,7 +18,7 @@ void menuPrincipal (){
 }
 void menuDistancia (){
 
-    printf("===== DISTANCIA =====\n");
+    printf("\n===== DISTANCIA =====\n");
     printf("--- Km <-> Milhas ---\n");
 
     printf("1 - Km -> Milhas\n ");
@@ -28,7 +28,7 @@ void menuDistancia (){
 }
 void menuTemperatura (){
 
-    printf("===== TEMPERATURA =====\n");
+    printf("\n===== TEMPERATURA =====\n");
     printf("--- Celsius <-> Fahrenheit ---\n");
 
     printf("1 - Celsius -> Fahrenheit\n");
@@ -38,7 +38,7 @@ void menuTemperatura (){
 }
 void menuMoedas (){
 
-    printf("===== MOEDAS =====\n");
+    printf("\n===== MOEDAS =====\n");
     printf("--- Real <-> Dolar ---\n");
 
     printf("1 - Real -> Dolar\n");
@@ -86,13 +86,17 @@ int main () {
     int opcaoTemperatura;
     int opcaoMoeda;
 
+    do
+    {
     menuPrincipal();
     scanf("%d", &opcao);
 
     switch (opcao){
     case 1 : {
-        
-            menuDistancia();
+
+        do
+        {
+                menuDistancia();
 
             printf("Escolha: ");
             scanf("%d", &opcaoDistancia);
@@ -131,19 +135,24 @@ int main () {
             
             
         case 3:
+            printf("Voltando ao menu principal...\n");
             break;
         
         default:
-            printf("Opcao invalida");
+            printf("Opcao invalida!\n");
             break;
         }
 
+        } while (opcaoDistancia != 3);
+        
         break;
     }
 
     case 2 : {
 
-        menuTemperatura();
+        do
+        {
+            menuTemperatura();
         printf("Escolha: ");
         scanf("%d", &opcaoTemperatura);
         
@@ -179,13 +188,16 @@ int main () {
     }
     
     case 3:
+            printf("Voltando ao menu principal...\n");
             break;
         
         default:
-            printf("Opcao invalida");
+            printf("Opcao invalida!\n");
             break;
         }
 
+        } while (opcaoTemperatura != 3);
+        
         break;
     
     }
@@ -193,7 +205,10 @@ int main () {
     
     case 3 : {
 
-        menuMoedas();
+        do
+        {
+         
+                menuMoedas();
         printf("Escolha: ");
         scanf("%d", &opcaoMoeda);
 
@@ -231,12 +246,15 @@ int main () {
     }
         
     case 3:
+            printf("Voltando ao menu principal...\n");
             break;
         
         default:
-            printf("Opcao invalida");
+            printf("Opcao invalida!\n");
             break;
         }
+
+        } while (opcaoMoeda != 3);
 
         break;
 
@@ -244,13 +262,15 @@ int main () {
         
 
     case 0 :
-        printf("Saindo...");
+        printf("\nEncerrando o programa...\n");
         break;
     
     default:
-    printf("Opcao invalida");
+    printf("Opcao invalida!\n");
     break;
 }
+    } while (opcao != 0);
+
 
 return 0;
 
