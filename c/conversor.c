@@ -48,6 +48,22 @@ void menuMoedas (){
 
 }
 
+// VALIDACAO-SCANF
+int lerInteiro(){
+
+    int valor;
+
+    while (scanf("%d", &valor) != 1){
+
+        printf("Entrada inválida! Digite apenas números.\n");
+
+        while(getchar() != '\n');
+    }
+
+    return valor;
+}
+
+
 // CONVERSOES
 float celsiusParaFahrenheit(float c){
 
@@ -92,7 +108,7 @@ void executarDistancia(){
                 menuDistancia();
 
             printf("Escolha: ");
-            scanf("%d", &opcaoDistancia);
+            opcaoDistancia = lerInteiro();
         
         switch (opcaoDistancia){
         case 1: {
@@ -149,7 +165,7 @@ void executarTemperatura(){
 
             menuTemperatura();
         printf("Escolha: ");
-        scanf("%d", &opcaoTemperatura);
+        opcaoTemperatura = lerInteiro();
         
     switch (opcaoTemperatura){
     case 1: {
@@ -207,7 +223,7 @@ void executarMoedas(){
 
                 menuMoedas();
         printf("Escolha: ");
-        scanf("%d", &opcaoMoeda);
+        opcaoMoeda = lerInteiro();
 
     switch (opcaoMoeda){
     case 1: {
@@ -264,8 +280,10 @@ int main () {
 
     do
     {
+        
     menuPrincipal();
-    scanf("%d", &opcao);
+    // executa a funcao e devolva um inteiro para colocar dentro da variável opcao
+    opcao = lerInteiro();
 
     switch (opcao){
     case 1 : {
@@ -294,4 +312,4 @@ int main () {
 
 return 0;
 
-}
+} 
