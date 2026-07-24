@@ -48,7 +48,7 @@ void menuMoedas (){
 
 }
 
-// VALIDACAO-SCANF
+// VALIDACAO-SCANF-INT
 int lerInteiro(){
 
     int valor;
@@ -63,6 +63,20 @@ int lerInteiro(){
     return valor;
 }
 
+// VALIDACAO-SCANF-FLOAT
+float lerFloat(){
+
+    float valor;
+
+    while (scanf("%f", &valor) != 1){
+
+        printf("Entrada inválida! Digite apenas números.\n");
+
+        while (getchar() != '\n');
+    }
+
+    return valor;
+}
 
 // CONVERSOES
 float celsiusParaFahrenheit(float c){
@@ -116,7 +130,7 @@ void executarDistancia(){
             float km;
 
             printf("Digite a quantidade em Km: ");
-            scanf("%f", &km);
+            km = lerFloat();
 
             printf("\nResultado:\n");
             float resultado = kmParaMilhas(km);
@@ -132,7 +146,7 @@ void executarDistancia(){
             float milhas;
 
             printf("Digite a quantidade em Milhas: ");
-            scanf("%f", &milhas);
+            milhas = lerFloat();
 
             printf("\nResultado:\n");
             float resultado = milhasParaKm(milhas);
@@ -172,7 +186,7 @@ void executarTemperatura(){
         float celsius;
 
         printf("Digite a temperatura em Celsius: ");
-        scanf("%f", &celsius);
+        celsius = lerFloat();
 
         printf("\nResultado:\n");
         float resultado = celsiusParaFahrenheit(celsius);
@@ -187,7 +201,7 @@ void executarTemperatura(){
         float fahrenheit;
 
         printf("Digite a temperatura em Fahrenheit: ");
-        scanf("%f", &fahrenheit);
+        fahrenheit = lerFloat();
 
         printf("\nResultado:\n");
         float resultado = fahrenheitParaCelsius(fahrenheit);
@@ -231,7 +245,7 @@ void executarMoedas(){
         float real;
 
         printf("Digite a quantidade em Real: ");
-        scanf("%f", &real);
+        real = lerFloat();
 
         printf("\nResultado:\n");
         float resultado = realParaDolar(real);
@@ -247,7 +261,7 @@ void executarMoedas(){
         float dolar;
 
         printf("Digite a quantidade em Dolar: ");
-        scanf("%f", &dolar);
+        dolar = lerFloat();
 
         printf("\nResultado:\n");
         float resultado = dolarParaReal(dolar);
