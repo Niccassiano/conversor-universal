@@ -49,34 +49,29 @@ void menuMoedas (){
 }
 
 // VALIDACAO-SCANF-INT
-int lerInteiro(){
+int lerInteiro() {
 
+    char texto[100];
     int valor;
+    char resto;
 
-    while (scanf("%d", &valor) != 1){
+    while (1) {
 
-        printf("Entrada inválida! Digite apenas números.\n");
+        if (fgets(texto, sizeof(texto), stdin) == NULL) {
+            continue;
+        }
 
-        while(getchar() != '\n');
-    }
+        int retorno = sscanf(texto, "%d %c", &valor, &resto);
 
-    return valor;
-}
-
-// VALIDACAO-SCANF-FLOAT
-float lerFloat(){
-
-    float valor;
-
-    while (scanf("%f", &valor) != 1){
+        if (retorno == 1) {
+            return valor;
+        }
 
         printf("Entrada inválida! Digite apenas números.\n");
-
-        while (getchar() != '\n');
     }
-
-    return valor;
 }
+
+
 
 // CONVERSOES
 float celsiusParaFahrenheit(float c){
