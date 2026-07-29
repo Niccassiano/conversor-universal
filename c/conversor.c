@@ -49,33 +49,49 @@ void menuMoedas (){
 }
 
 // VALIDACAO-SCANF-INT
-int lerInteiro(){
+int lerInteiro() {
 
+    char texto[100];
     int valor;
+    char resto;
 
-    while (scanf("%d", &valor) != 1){
+    while (1) {
+
+        if (fgets(texto, sizeof(texto), stdin) == NULL) {
+            continue;
+        }
+
+        int retorno = sscanf(texto, "%d %c", &valor, &resto);
+
+        if (retorno == 1) {
+            return valor;
+        }
 
         printf("Entrada inválida! Digite apenas números.\n");
-
-        while(getchar() != '\n');
     }
-
-    return valor;
 }
 
 // VALIDACAO-SCANF-FLOAT
-float lerFloat(){
+float lerFloat() {
 
+    char texto[100];
     float valor;
+    char resto;
 
-    while (scanf("%f", &valor) != 1){
+    while (1) {
+
+        if (fgets(texto, sizeof(texto), stdin) == NULL) {
+            continue;
+        }
+
+        int retorno = sscanf(texto, "%f %c", &valor, &resto);
+
+        if (retorno == 1) {
+            return valor;
+        }
 
         printf("Entrada inválida! Digite apenas números.\n");
-
-        while (getchar() != '\n');
     }
-
-    return valor;
 }
 
 // CONVERSOES

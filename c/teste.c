@@ -2,14 +2,14 @@
 
 int main () {
 
-    int numero;
-    int retorno;
+    char texto[100];
+    int valor;
 
-    printf("Escolha um numero: ");
-    retorno = scanf("%d", &numero);
+    fgets(texto, sizeof(texto), stdin);
 
-    printf("scanf retornou: %d\n", retorno);
-    printf("numero: %d\n", numero);
+    int retorno = sscanf(texto, "%d", &valor);
 
-    return;
+    printf("Retorno = %d\n", retorno);
+    printf("Valor = %d\n", valor);
+    printf("Texto = %s", texto);
 }
