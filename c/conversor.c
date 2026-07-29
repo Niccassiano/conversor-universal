@@ -71,7 +71,28 @@ int lerInteiro() {
     }
 }
 
+// VALIDACAO-SCANF-FLOAT
+float lerFloat() {
 
+    char texto[100];
+    float valor;
+    char resto;
+
+    while (1) {
+
+        if (fgets(texto, sizeof(texto), stdin) == NULL) {
+            continue;
+        }
+
+        int retorno = sscanf(texto, "%f %c", &valor, &resto);
+
+        if (retorno == 1) {
+            return valor;
+        }
+
+        printf("Entrada inválida! Digite apenas números.\n");
+    }
+}
 
 // CONVERSOES
 float celsiusParaFahrenheit(float c){
