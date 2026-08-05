@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor Universal</title>
+</head>
+<body>
+    
+    <main>
+        <header>
+            <h1 class="titulo-principal">Conversor Universal</h1>
+            <p class="subtitulo">Escolha uma categoria e converta seus dados automaticamente</p>
+        </header>
+
+        <section class="categoria">
+            <h2 class="titulo-secundario">Escolha uma Categoria</h2>
+            <button id="btn-distancia">Distância</button>
+            <button id="btn-temperatura">Temperatura</button>
+            <button id="btn-moedas">Moedas</button>
+        </section>
+
+        <section class="formulario">
+            <h2 class="titulo-secundario">Área do Conversor</h2>
+
+            <form id="form-conversor" action="#">
+            <label for="valor">Valor</label>
+            <input
+                type="number"
+                id="valor"
+                name="valor"
+                placeholder="Digite um valor"
+                step="any"
+                required>
+
+            <label for="origem">Origem</label>
+            <select id="origem" name="origem">
+                <option value="km">Km</option>
+                <option value="milhas">Milhas</option>
+            </select>
+
+            <label for="destino">Destino</label>
+            <select id="destino" name="destino">
+                <option value="milhas">Milhas</option>
+                <option value="km">Km</option>
+            </select>
+
+            <button type="submit" id="converter">Converter</button>
+            </form>
+        </section>
+
+        <section class="resultado">
+        <h2 class="titulo-secundario">Resultado</h2>
+        <p
+        id="resultado-texto"
+        class="resultado-texto">
+        Aguardando conversão...
+        </p>
+     </section>
+    </main>
+
+    <footer>
+    <p>Desenvolvido por Nicolle Cassiano</p>
+    </footer>
+
+
+</body>
+</html>
