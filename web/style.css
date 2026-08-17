@@ -26,3 +26,64 @@ main {
     flex-direction: column;
     gap: 1.7rem;
 }
+
+header{
+    text-align: center;
+}
+
+.titulo-principal {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+.subtitulo {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.titulo-secundario {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 1rem;
+    border-bottom:  2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+.categoria {
+    display: flex;
+    flex-direction: column;
+}
+
+.categoria button {
+    display: inline-block;
+    flex: 1;
+    margin: 0.40rem;
+    padding: 0.6rem 1rem;
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    color: #475569;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.8rem;
+}
+
+.categoria button:hover {
+    background-color: #e0eeff;
+    color: #0F172A;
+}
+
+.categoria button:active, 
+.categoria button:focus{
+    background-color: #3b82f6;
+    color: #ffffff;
+    border-color: #3b82f6;
+    outline: none;
+}
+
